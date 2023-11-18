@@ -27,7 +27,7 @@ jobs:
       uses: docker/build-push-action@v5.1.0
       with:
           context: .
-          tags: ${{ secrets.DOCKER_USERNAME }}/gitactionsdotnet:$(date +%s)
+          tags: ${{ secrets.DOCKER_USERNAME }}"/gitactionsdotnet:v1"
           push: true
          
           
