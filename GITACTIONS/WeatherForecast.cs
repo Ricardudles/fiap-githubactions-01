@@ -1,4 +1,4 @@
-namespace FIAP_SLOT_ARM_PIPE
+namespace GITACTIONS
 {
     public class WeatherForecast
     {

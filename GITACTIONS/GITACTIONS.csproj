@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>FIAP_SLOT_ARM_PIPE</RootNamespace>
+    <RootNamespace>GITACTIONS</RootNamespace>
     <UserSecretsId>14c5d4f1-c487-42c1-b593-32e2e812445c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>

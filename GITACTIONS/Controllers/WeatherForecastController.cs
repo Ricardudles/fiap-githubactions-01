@@ -1,6 +1,7 @@
+using GITACTIONS;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FIAP_SLOT_ARM_PIPE.Controllers
+namespace GITACTIONS.Controllers
 {
     [ApiController]
     [Route("[controller]")]
