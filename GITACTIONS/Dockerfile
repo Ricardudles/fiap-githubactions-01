@@ -8,17 +8,17 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["FIAP-SLOT-ARM-PIPE/FIAP-SLOT-ARM-PIPE.csproj", "FIAP-SLOT-ARM-PIPE/"]
-RUN dotnet restore "./FIAP-SLOT-ARM-PIPE/./FIAP-SLOT-ARM-PIPE.csproj"
+COPY ["GITACTIONS/GITACTIONS.csproj", "GITACTIONS/"]
+RUN dotnet restore "./GITACTIONS/./GITACTIONS.csproj"
 COPY . .
-WORKDIR "/src/FIAP-SLOT-ARM-PIPE"
-RUN dotnet build "./FIAP-SLOT-ARM-PIPE.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/GITACTIONS"
+RUN dotnet build "./GITACTIONS.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./FIAP-SLOT-ARM-PIPE.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./GITACTIONS.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "FIAP-SLOT-ARM-PIPE.dll"]
+ENTRYPOINT ["dotnet", "GITACTIONS.dll"]
