@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./GITACTIONS --file Dockerfile --tag gitactionsdotnet:$(date +%s)
+      run: docker build . --file GITACTIONS/Dockerfile --tag gitactionsdotnet:$(date +%s)
